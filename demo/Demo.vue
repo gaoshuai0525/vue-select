@@ -10,7 +10,6 @@
 </template>
 <script>
 
-//import VSelect from '../dist/vue-select.min.js'
 import vSelect from '../src/index'
 export default {
   components: {

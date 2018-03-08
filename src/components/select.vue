@@ -9,7 +9,7 @@
                 :placeholder="placeholder"
                 readonly
         >
-        <i class="icon" @click="showList"></i>
+        <i class="icon" @click="showList" :class="[isShow?'expand':'shink']"></i>
         <scrollbar :style="{height:height}" class='dropdown' v-if="isShow">
             <ul>
                 <li class="dropdown-item"
@@ -120,13 +120,14 @@
         font-size: 12px;
     }
     .icon{
-        width: 1.5rem;
-        height: 100%;
-        line-height: 3rem;
         position: absolute;
         right: 8px;
-        top:0;
-        background: url(./select-icon.png) center no-repeat;
+        top: 1rem;
+        transform-origin: center 5px;
+        border-top: 10px solid #C7C7C7;
+        border-right:10px solid transparent;
+        border-bottom:10px solid transparent;
+        border-left:10px solid transparent;
     }
     .dropdown{
         width: 100%;
@@ -140,7 +141,6 @@
     }
 
     .dropdown-item{
-
         height: 40px;
         line-height: 40px;
         padding: 0 20px;
@@ -161,5 +161,13 @@
     }
     .dropdown-item:hover{
         background: #f5f7fa;
+    }
+    .expand {
+        transform: rotate(180deg);
+        transition: all .5s;
+    }
+    .shink {
+        transform: rotate(0deg);
+        transition: all .5s;
     }
 </style>

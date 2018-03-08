@@ -5,6 +5,7 @@ const uglify = require('rollup-plugin-uglify')
 const resolve = require('rollup-plugin-node-resolve')
 const commonjs = require('rollup-plugin-commonjs')
 const scss = require('rollup-plugin-scss')
+const image  = require( 'rollup-plugin-image');
 const alias = require('rollup-plugin-alias')
 const rootImport = require('rollup-plugin-root-import')
 export default {
@@ -25,6 +26,7 @@ export default {
           // If we don't find the file verbatim, try adding these extensions
           extensions: ['.js', '.vue', '.css']
       }),
+      image(),
       // scss({ output: 'dist/vue-select.min.css' }),
       alias({
           vue$: 'vue/dist/vue.js',
